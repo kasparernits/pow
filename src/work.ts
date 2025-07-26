@@ -9,9 +9,13 @@ const tx = [
   "Frank pays Grace 0.01 BTC",
 ];
 
-// Easy example (4 bits = 1 hex zero)
-// Harder example (16 bits = 4 hex zeros)
-const result = proofOfWork(tx, 3);
+// 1 hex zero = 4 bits
+// 4 hex zeros = 16 bits
+// 8 hex zeros = 32 bits
+
+const zeros = 4; 
+
+const result = proofOfWork(tx, zeros);
 
 console.log("Nonce:", result.nonce);
 console.log("Hash :", result.hash);
